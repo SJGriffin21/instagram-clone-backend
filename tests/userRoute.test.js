@@ -5,14 +5,14 @@ const routes = require('../src/routes/userRoute');
 const app = express();
 const router  = express.Router();
 app.use(express.json());
-app.use('/api/user', router);
-
+// app.use('/api/user', routes);
+require("../src/routes/userRoute")(app)
 
 describe('User Routes', () => {
 
     it('should return users', async () => {
         const res = await request(app)
-          .get('/searchUser')
+          .get('/api/user/searchUser')
         expect(res.statusCode).toEqual(200); 
       });
 
