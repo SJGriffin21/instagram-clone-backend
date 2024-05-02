@@ -14,7 +14,6 @@ const signup = async (req, res) => {
       password: hashedPassword,
       email: email,
     });
-    // const saveuser = await createduser.save();
     await createduser.save();
     res.status(200).send({
       status: "success",
