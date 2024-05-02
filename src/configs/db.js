@@ -4,7 +4,8 @@ const URI = "mongodb+srv://sjgriffin:<password>@cluster0.o5gttlb.mongodb.net/?re
 
 const connectDB = async () => {
   try {
-    const con = await mongoose.connect(URI);
+    // const con = await mongoose.connect(URI);
+    await mongoose.connect(URI);
     console.log("DB Connected Successfully ✅");
   } catch (e) {
     console.log(`Authentication to database failed ❗`);
