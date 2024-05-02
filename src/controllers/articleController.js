@@ -88,7 +88,7 @@ const getTimeline = async (req, res) => {
           .populate("user", "username profilePicture");
       })
     );
-    arr = myArticles.concat(...followingsArticles);
+    let arr = myArticles.concat(...followingsArticles);
     res.status(200).send({
       status: "success",
       Articles: arr,
